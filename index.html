@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Social Media Feed Aggregator</title>
+  <style>
+    .card {
+      background: white;
+      width: 250px;
+      height: 360px;              
+      margin: 10px;
+      padding: 10px;
+      display: inline-flex;      
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 2px 2px 5px gray;
+      border-radius: 6px;
+    }
+    img {
+      width: 100%;
+      height: 140px;             
+      object-fit: cover;       
+    }
+
+    .feed {
+      display: flex;
+      justify-content: center;   
+      flex-wrap: wrap;           
+    }
+
+    body { font-family: Arial; background: gray; }
+
+  </style>
+</head>
+<body>
+
+<h2>Social Media Feed Aggregator</h2>
+<div id="feed" class="feed"></div>
+
+<script>
+// YouTube (normalized)
+const youtube = [
+  { platform:"YouTube", title:"What Is A Social Media API?", image:"https://i.ytimg.com/vi/tJQQvnA8MYc/hqdefault.jpg", date:"2025-01-05", link:"https://www.youtube.com/watch?v=tJQQvnA8MYc" },
+  { platform:"YouTube", title:"Frontend web development", image:"https://i.ytimg.com/vi/WG5ikvJ2TKA/hqdefault.jpg", date:"2025-01-08", link:"https://www.youtube.com/watch?v=WG5ikvJ2TKA" }
+];
+
+// TikTok (normalized)
+const tiktok = [
+  { platform:"TikTok", title:"Beautiful Travel Moments", image:"tiktok.jpg", date:"2025-01-15", link:"https://www.tiktok.com/@wanderlensteam/video/7424785431910206740" }
+];
+
+// Merge
+const allFeeds = youtube.concat(tiktok);
+
+// Display
+const feedDiv = document.getElementById("feed");
+
+allFeeds.forEach(item => {
+  feedDiv.innerHTML += `
+    <div class="card">
+      <h4>${item.platform}</h4>
+      <img src="${item.image}">
+      <p>${item.title}</p>
+      <small>${item.date}</small><br>
+      <a href="${item.link}" target="_blank">Open</a>
+    </div>
+  `;
+});
+</script>
+
+</body>
+</html>
