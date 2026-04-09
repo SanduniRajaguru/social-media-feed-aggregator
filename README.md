@@ -12,8 +12,6 @@ A simple web-based project that displays content from multiple social media plat
 ## 🛠️ Technologies Used
 
 * HTML
-* CSS (optional if added later)
-* JavaScript (optional if added later)
 
 ## 📂 Project Structure
 
